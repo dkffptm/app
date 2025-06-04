@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/authRoutes');
+const postRoutes = require('./routes/postRoutes');
 const errorHandler = require('./middlewares/errorHandler');
 require('dotenv').config();
 
@@ -18,6 +19,7 @@ app.use(
 );
 
 app.use('/auth', authRoutes);
+app.use('/posts', postRoutes);
 
 app.use(errorHandler);
 
